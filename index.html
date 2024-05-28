@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gj'world</title>
+    <link rel="website icon" href="image/logo.jpg" type="jpg">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap');
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .parent {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            justify-content: space-between;
+            background-color: white;
+            z-index: 999;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .parent h1 {
+            font-family: montserrat;
+            color: black;
+            margin-left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
+        ul li {
+            list-style-type: none;
+            margin: 30px;
+        }
+
+        ul li a {
+            font-family: montserrat;
+            color: black;
+            text-decoration: none;
+        }
+
+        .main {
+            background-color: #FFF9D0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .main h3 {
+            font-family: montserrat;
+        }
+
+        .main h1 {
+            font-size: 70px;
+            font-family: moon dance;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about {
+            height: 565px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .about1 {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gusti img {
+            width: 15%;
+            height: 15%;
+            border-radius: 10px;
+        }
+
+        .gusti {
+            display: flex;
+            flex-wrap: nowrap;
+            border-radius: 10px;
+            width: 1200px;
+            background-color: bisque;
+        }
+        
+        .info {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info h1 {
+            font-family: montserrat;
+        }
+
+        .info {
+            padding: 20px;
+        }
+
+        .info p {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .tittle {
+            margin-top: 100px;
+            margin-bottom: -100px;
+            font-family: Moon Dance;
+            font-size: 70px;
+            display: flex;
+            font-weight: bold;
+            justify-content: center;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 150px;
+        }
+
+        .card-container1 {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .card {
+            width: 325px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0,2);
+            margin: 20px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-content h3 {
+            font-size: 28px;
+            font-family: montserrat;
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.3;
+        }
+
+        .hamburger{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            gap: 10px;
+            width: 30px;
+            height: 30px;
+            display: none;
+            margin-right: 20px;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: black;
+        }
+
+        .active{
+                transform: translate(0px,0px)!important;
+                opacity: 1 !important;
+            }
+
+        @media screen and (max-width : 576px) {
+            .hamburger {
+                display: flex;
+                z-index: 999999999;
+            }
+            .parent {
+                justify-content: space-between;
+                display: flex;
+                max-width: 100%;
+                padding-right: 20px;
+            }
+            .navbar{
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                background-color: white;
+                width: 100%;
+                color: black;
+                top: 50px;
+                height: 35vh;
+                transform: translate(0px,-200px);
+                transition: 0.3s ease;
+                opacity: 0;
+                z-index: -10;
+            }
+
+            .main h1 {
+                margin: 0px 25px;
+                font-size: 50px;
+                text-align: center;
+            }
+
+            #gustit{
+                flex-wrap: wrap-reverse;
+            }
+
+            .about1{
+                margin-top: 570px;
+            }
+
+            #head1 {
+                margin-bottom: 200px;
+            }
+
+            #head2{
+                margin-top: 400px;
+            }
+
+            #jia {
+                flex-wrap: wrap;
+            }
+
+            .gusti img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <h1>Gj'world</h1>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#photo">Photo</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div id="home"></div>
+    <div class="main">
+        <h1 class="animate__animated animate__fadeInRight">Welcome To our story together</h1>
+    </div>
+    <div id="about"></div>
+    <p id="head1" class="tittle">duo maut</p>
+    <div class="about">
+        <div id="gustit" class="gusti">
+            <div class="info">
+                <h1>Mohamad Gusti</h1>
+                <p>Halooo nama gw Mohamad Gusti Ramadhan biasanya si orang-orang manggil gw gus tapi gw lebih suka di panggil ti,gw lahir di jakarta hobby gw bisa di bilang main game karna ga bisa hidup tanpa game jadi harus 24/7 main game mhewhwhehwe.Cita cita gw ya sebenernya cuma pengen sukses</p>
+            </div>
+            <img src="image/gusti.jpg" alt="">
+        </div>
+    </div>
+    <div class="about1">
+        <div id="jia" class="gusti">
+            <img src="image/jia.jpg" alt="">
+            <div class="info">
+                <h1>Jihan Yusriyah</h1>
+                <p>nama aku jihannnnn aku biasa di panggil Jian (orng terdekat) aku lahir di jakarta, aku tinggal di bumi, hobby aku baca buku anjayy, cita cita aku mau jadi istri renjun.. minjae, Jeno, Minggu, dll. Aku suka Gusti banyak banyak lebih dari Renjun, aku suka pup juga. Aku paling suka makeup karena lebih bisa love myself dan aku selalu jatuh cinta sama langit yang warna biru penuh awan wow Aku suka warna pink and blue</p>
+            </div>
+        </div>
+    </div>
+    <div id="photo"><p id="head2" class="tittle">List Date</p></div>
+    <div class="card-container">
+        <div class="card">
+            <img src="image/museum.jpg" alt="">
+            <div class="card-content">
+                <h3>Museum Date 💕</h3>
+                <p>Ini kita pas libur smester,coba coba ngide mau ngedate di museum belajar tentang banyak hal (aslinya sih pacaran doang belajar kaga) tapi date ini tuh serunyaa 9/10</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/miksu.jpg" alt="">
+            <div class="card-content">
+                <h3>Mixueee Date 💕</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur sit ex iste cupiditate adipisci iusto illum sequi voluptas, sed omnis! Sapiente, corporis nobis facere quae delectus hic veniam eius nemo!</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/pantai.jpg" alt="">
+            <div class="card-content">
+                <h3>Pantai Date 💕</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur sit ex iste cupiditate adipisci iusto illum sequi voluptas, sed omnis! Sapiente, corporis nobis facere quae delectus hic veniam eius nemo!</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-container1">
+        <div class="card">
+            <img src="image/sunset.jpg" alt="">
+            <div class="card-content">
+                <h3>Sunset Date 💕</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur sit ex iste cupiditate adipisci iusto illum sequi voluptas, sed omnis! Sapiente, corporis nobis facere quae delectus hic veniam eius nemo!</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Angkringan Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Photobox Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-container1">
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Night Ride Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Nyeblak Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Maskeran Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-container1">
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Ngelukis Bareng 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/pulbar.jpg" alt="">
+            <div class="card-content">
+                <h3>Pulang Bareng 💕</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur sit ex iste cupiditate adipisci iusto illum sequi voluptas, sed omnis! Sapiente, corporis nobis facere quae delectus hic veniam eius nemo!</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Time Zone Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-container1">
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Street Food Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Joging Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Birthday Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-container1">
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Cooking Date 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/comingsoon.png" alt="">
+            <div class="card-content">
+                <h3>Sepedaan Bareng 💕</h3>
+                <p>Belum pernah😔,tapi gapapa ikutin terus yh history kita berdua sampai semuaa card ini lengkapp</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="image/movie.jpg" alt="">
+            <div class="card-content">
+                <h3>Movie Date 💕</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur sit ex iste cupiditate adipisci iusto illum sequi voluptas, sed omnis! Sapiente, corporis nobis facere quae delectus hic veniam eius nemo!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const hamburger = document.querySelector(".hamburger")
+        const navbar = document.querySelector(".navbar")
+
+hamburger.addEventListener("click",() => {
+    navbar.classList.toggle("active")
+    
+}) 
+    </script>
+</body>
+</html>
